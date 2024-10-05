@@ -15,15 +15,19 @@ margin-top:-40px;
 }
 nav {
     padding-top: 10px;
-    background: #CCB8B4;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     overflow: hidden;
      box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
 border-radius: 10px;
 margin: 10px;
-margin-right: 10px;
-text-align: center;
-
-margin-right: 10px;
+margin-right: 100px;
+text-align: left;
+/**/
+margin-right: 100px;
+text-shadow: 1px  0px 0px white,
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
   }
  
   nav a {
@@ -31,17 +35,92 @@ margin-right: 10px;
    float:center;
     display: block;
     color: #333;
-    text-align: center;
-     position: relative;  top: -11px; left: 350px;
-margin-right: 10px;
+    text-align:center;
+     
+
     text-decoration: none;
     margin: 20px;
   }
- 
-  nav a:hover {
-    background-color: #ddd;
-    color: black;
-    text-align: center;
-    ;
-margin-right: 10px;
+
+  /*
+  css de magdaleno
+
+  
+  */
+
+  .color{
+    color:WHITE;
+}
+
+.Tiempo{
+    font-size:80px;
+    color:white;
+}
+
+#wrapper {
+    width: 100%;
+    height: 5px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  .slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 40%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: Gray; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .cen {
+    display: flex;
+  justify-content: space-around; /* Distribuye el espacio horizontalmente */
+  align-items: center; 
+  padding: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px;
+  flex-direction: row; /* Ya está en fila */
+  font-size: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  
+  }
+ 
+ 
+ 
+ 
+  
+ 
+  
