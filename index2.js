@@ -1,3 +1,23 @@
+//Index Parte 1
+
+var now = new Date();
+var datetime = now.toLocaleDateString();
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+
+// Establecer estilo para el contorno del texto
+output.style.textShadow = 
+    '-1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff';
+    output.style.fontFamily='Franklin Gothic Medium'; // Contorno blanco
+output.innerHTML = "May " + slider.value + "rd"; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+//slider.oninput = function() {  };
+
+
+//Index Parte 2
+
 import * as THREE from "three";
 import { OrbitControls } from "jsm/controls/OrbitControls.js";
 import getStarfield from "./src/getStarfield.js";
@@ -45,12 +65,85 @@ earthGroup.add(moonMesh);
 // Posición de la luna
 moonMesh.position.set(1.5, 0, 0);
 
-// Añadir la nube al grupo de la Tierra
-const cloudTexture = loader.load("https://i.ibb.co/C1d1b22/cloud.jpg");  // Carga una textura de nube
-const spriteMaterial = new THREE.SpriteMaterial({ map: cloudTexture, transparent: true });
+// Añadir la aurora al grupo de la Tierra
+const cloudTexture = loader.load("./assets/Aurora.png");  // Carga una textura de nube
+const spriteMaterial = new THREE.SpriteMaterial({ map: cloudTexture, transparent: true, opacity: 0.7 });
 const cloudSprite = new THREE.Sprite(spriteMaterial);
 cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
-cloudSprite.position.set(2, 0.5, -1);  // Posición fija de la nube en la Tierra
+cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+//Switch para definir las propiedades de la aurora
+slider.oninput = function() {
+    const sliderValue = parseInt(slider.value);  // Convertir el valor del slider a número
+    
+    switch (sliderValue) {  // Usar el valor numérico para las comparaciones
+        case 3:
+            cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 4:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 5:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 6:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 7:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;      
+        case 8:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 9:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 10:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 11:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;      
+        case 12:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 13:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 14:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        case 15:
+            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+        default:
+            cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
+            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            break;
+    }
+
+    // Cambiar el texto según el valor del slider
+    if (sliderValue === 3) {
+        output.innerHTML = "May " + sliderValue + "rd";
+    } else {
+        output.innerHTML = "May " + sliderValue + "th";
+    } 
+};
+
+
+
 
 // Añadir la nube al grupo de la Tierra para que gire con ella
 earthGroup.add(cloudSprite);
@@ -63,7 +156,7 @@ const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-2, 0.5, 1.5);
 scene.add(sunLight);
 
-// Crear el div de advertencia
+// Texto de advertencia
 const warningDiv = document.createElement('div');
 warningDiv.style.position = 'absolute';
 warningDiv.style.top = '50%';
@@ -71,49 +164,9 @@ warningDiv.style.left = '50%';
 warningDiv.style.transform = 'translate(-50%, -50%)';
 warningDiv.style.color = 'white';
 warningDiv.style.fontSize = '2em';
-warningDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Fondo oscuro con transparencia
-warningDiv.style.padding = '20px'; // Añadir padding
-warningDiv.style.borderRadius = '10px'; // Esquinas redondeadas
 warningDiv.style.display = 'none'; // Oculto por defecto
 warningDiv.textContent = 'What do you think is out here?';
-
-// Crear un salto de línea
-const lineBreak = document.createElement('br');
-warningDiv.appendChild(lineBreak);
-warningDiv.appendChild(lineBreak);
-warningDiv.appendChild(lineBreak);
-warningDiv.appendChild(lineBreak); // Añadir el salto de línea
-
-// Crear el botón
-const button = document.createElement('button');
-button.textContent = 'Discover It';
-button.style.marginTop = '10px'; // Espacio entre el texto y el botón
-button.style.padding = '10px 20px'; // Espaciado del botón
-button.style.fontSize = '15px'; // Tamaño de fuente del botón
-button.style.cursor = 'pointer'; // Cambia el cursor al pasar por encima
-button.style.height = '50px'; // Ajusta la altura del botón
-button.style.width = '120px'; // Ajusta el ancho del botón
-button.style.marginLeft='130px';
-
-// Añadir el evento de clic al botón
-button.onclick = function() {
-    window.location.href = 'https://n9.cl/1rmj9'; // Cambia esto por el enlace deseado
-};
-
-// Añadir el botón al div de advertencia
-warningDiv.appendChild(button);
-
-// Añadir el div al cuerpo del documento
 document.body.appendChild(warningDiv);
-
-// Función para mostrar el div de advertencia
-function showWarning() {
-    warningDiv.style.display = 'block'; // Mostrar el div
-}
-
-// Ejemplo de uso: mostrar el div después de 3 segundos
-setTimeout(showWarning, 3000);
-
 
 // Ajuste de tamaño al redimensionar la ventana
 window.addEventListener('resize', () => {
@@ -151,8 +204,6 @@ function animate() {
     } else {
         warningDiv.style.display = 'none';   // Ocultar el texto
     }
-
-    
 
     renderer.render(scene, camera);
 }
