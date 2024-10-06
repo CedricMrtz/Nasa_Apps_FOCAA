@@ -63,7 +63,7 @@ const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-2, 0.5, 1.5);
 scene.add(sunLight);
 
-// Texto de advertencia
+// Crear el div de advertencia
 const warningDiv = document.createElement('div');
 warningDiv.style.position = 'absolute';
 warningDiv.style.top = '50%';
@@ -71,9 +71,49 @@ warningDiv.style.left = '50%';
 warningDiv.style.transform = 'translate(-50%, -50%)';
 warningDiv.style.color = 'white';
 warningDiv.style.fontSize = '2em';
+warningDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Fondo oscuro con transparencia
+warningDiv.style.padding = '20px'; // Añadir padding
+warningDiv.style.borderRadius = '10px'; // Esquinas redondeadas
 warningDiv.style.display = 'none'; // Oculto por defecto
 warningDiv.textContent = 'What do you think is out here?';
+
+// Crear un salto de línea
+const lineBreak = document.createElement('br');
+warningDiv.appendChild(lineBreak);
+warningDiv.appendChild(lineBreak);
+warningDiv.appendChild(lineBreak);
+warningDiv.appendChild(lineBreak); // Añadir el salto de línea
+
+// Crear el botón
+const button = document.createElement('button');
+button.textContent = 'Discover It';
+button.style.marginTop = '10px'; // Espacio entre el texto y el botón
+button.style.padding = '10px 20px'; // Espaciado del botón
+button.style.fontSize = '15px'; // Tamaño de fuente del botón
+button.style.cursor = 'pointer'; // Cambia el cursor al pasar por encima
+button.style.height = '50px'; // Ajusta la altura del botón
+button.style.width = '120px'; // Ajusta el ancho del botón
+button.style.marginLeft='130px';
+
+// Añadir el evento de clic al botón
+button.onclick = function() {
+    window.location.href = 'https://n9.cl/1rmj9'; // Cambia esto por el enlace deseado
+};
+
+// Añadir el botón al div de advertencia
+warningDiv.appendChild(button);
+
+// Añadir el div al cuerpo del documento
 document.body.appendChild(warningDiv);
+
+// Función para mostrar el div de advertencia
+function showWarning() {
+    warningDiv.style.display = 'block'; // Mostrar el div
+}
+
+// Ejemplo de uso: mostrar el div después de 3 segundos
+setTimeout(showWarning, 3000);
+
 
 // Ajuste de tamaño al redimensionar la ventana
 window.addEventListener('resize', () => {
@@ -111,6 +151,8 @@ function animate() {
     } else {
         warningDiv.style.display = 'none';   // Ocultar el texto
     }
+
+    
 
     renderer.render(scene, camera);
 }
