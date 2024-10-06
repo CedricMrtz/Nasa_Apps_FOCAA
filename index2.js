@@ -61,7 +61,7 @@ warningDiv.style.transform = 'translate(-50%, -50%)';
 warningDiv.style.color = 'white';
 warningDiv.style.fontSize = '2em';
 warningDiv.style.display = 'none'; // Oculto por defecto
-warningDiv.textContent = 'theres nothing to search for here';
+warningDiv.textContent = 'What do you think is out here?';
 document.body.appendChild(warningDiv);
 
 // Ajuste de tamaño al redimensionar la ventana
