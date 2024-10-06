@@ -195,6 +195,7 @@
   align-items: center;     /* Centrado vertical */
   height: 100px;           /* Altura completa de la ventana */
   margin-left:100px;
+  z-index: 1;
   
 
 }
