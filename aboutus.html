@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOW US WHAT THE MAY 2024 GEOMACNETIC STORMS LOOKED LIKE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
-     <link rel="javascript" href="dynamic_styles.js">
-    <script defer src="index.html"></script>
+    <title>SHOW US WHAT THE MAY 2024 GEOMAGNETIC STORMS LOOKED LIKE</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Added a placeholder for the favicon -->
+    <script defer src="script.js"></script> <!-- Removed link to non-standard 'rel=javascript' -->
     <link rel="icon" href="https://i.ibb.co/Wyrgj1b/logo.webp" type="image/icon type">
 </head>
 
 <body class="back">
-    
-   
+    <header>
+        <h1>Mission, Vision, and Goals</h1>
+    </header>
 
-   
-    
-   
-</body> 
-<footer><!-- Show us what the may 2024 geomagnetic storms looked like-->
-      
+    <div class="content">
+        <div class="block">
+            <h2 onclick="toggleImage('mission-image')">Mission</h2>
+            <p class="dynamic-text">
+                Our mission is to create a <b>visual representation</b> that tells the story of the May 2024 solar storms and helps members of the general public better understand the impacts of those events, in addition to educating people about <b>space weather</b> and how it affects Earth, the Moon, Mars, and other locations in our solar system. We desire to <b>raise awareness</b> and generate curiosity among multiple communities about this natural phenomenon. To explain said event in such a way that it is <b>approachable and easy to understand</b> for anyone interested in it with no previous background knowledge.
+            </p>
+            <center><img id="mission-image" class="rounded-image" src="./assets/us.webp" alt="Mission Image"></center>
+        </div>
+
+        <div class="block">
+            <h2 onclick="toggleImage('vision-image')">Vision</h2>
+            <p class="dynamic-text">
+                We envision ourselves as a team that <b>strives for solutions</b> that will benefit our community and society. For the coming years, all of us want to work in different areas of the <b>tech industry</b> to generate <b>meaningful changes</b> to our environments in one way or another.
+            </p>
+            <center><img id="vision-image" class="rounded-image" src="./assets/us.webp" alt="Vision Image"></center>
+        </div>
+
+        <div class="block">
+            <h2 onclick="toggleImage('goals-image')">Goals</h2>
+            <p class="dynamic-text">
+                Aside from competing, we see this event as an <b>opportunity</b> to challenge ourselves with problems that we have never faced before, in addition to improving skills such as <b>teamwork, time management</b>, and the <b>development of projects</b>. Furthermore, we want to test our knowledge in programming and web development. We want to design something that we have never worked on before.
+            </p>
+            <center><img id="goals-image" class="rounded-image" src="./assets/us.webp" alt="Goals Image"></center>
+        </div>
+    </div>
+
+    <footer>
         <nav>
-            <h3><a href="index.html">GEOMACNETIC STORMS</h3></a>
-            <h3><a href="aboutus.html">ABOUT US</h3></a>
-              <h3><a href="VISIONS.html">VISIONS</h3></a>
-               
-                  
-          </nav>
-        
-      
-    
-</footer>
+            <h3><a href="index.html">DEVELOPMENT HISTORY</a></h3>
+            <h3><a href="aboutus.html">ABOUT US</a></h3>
+            <h3><a href="VISIONS.html">EYES ON EARTH</a></h3>
+        </nav>
+    </footer>
+
+</body>
+
 </html>
