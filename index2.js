@@ -14,10 +14,7 @@ document.body.appendChild(renderer.domElement);
 const earthGroup = new THREE.Group();
 earthGroup.rotation.z = -23.4 * Math.PI / 180;
 scene.add(earthGroup);
-new OrbitControls(camera, renderer.domElement);
-//controls.minDistance = 2;  // Establecer el zoom mínimo (distancia mínima)
-//controls.maxDistance = 10; // Establecer el zoom máximo (distancia máxima)
-
+const controls = new OrbitControls(camera, renderer.domElement);
 
 // Geometría de la Tierra
 const detail = 12;
@@ -38,15 +35,15 @@ const lightsMesh = new THREE.Mesh(geometry, lightsMat);
 earthGroup.add(lightsMesh);
 
 // Geometría y material de la luna
-const moonGeometry = new THREE.SphereGeometry(0.27, 12, 12); // 0.27 es aproximadamente el tamaño de la luna respecto a la tierra
+const moonGeometry = new THREE.SphereGeometry(0.27, 12, 12);
 const moonMaterial = new THREE.MeshStandardMaterial({
-    map: loader.load("./assets/moonmap4k.jpg"), // Añade una textura de la luna aquí
+    map: loader.load("./assets/moonmap4k.jpg"),
 });
 const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
 earthGroup.add(moonMesh);
 
 // Posición de la luna
-moonMesh.position.set(1.5, 0, 0); // Coloca la luna a una distancia de la Tierra
+moonMesh.position.set(1.5, 0, 0);
 
 const stars = getStarfield({ numStars: 2000 });
 scene.add(stars);
@@ -54,6 +51,18 @@ scene.add(stars);
 const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-2, 0.5, 1.5);
 scene.add(sunLight);
+
+// Texto de advertencia
+const warningDiv = document.createElement('div');
+warningDiv.style.position = 'absolute';
+warningDiv.style.top = '50%';
+warningDiv.style.left = '50%';
+warningDiv.style.transform = 'translate(-50%, -50%)';
+warningDiv.style.color = 'white';
+warningDiv.style.fontSize = '2em';
+warningDiv.style.display = 'none'; // Oculto por defecto
+warningDiv.textContent = 'theres nothing to search for here';
+document.body.appendChild(warningDiv);
 
 // Ajuste de tamaño al redimensionar la ventana
 window.addEventListener('resize', () => {
@@ -70,8 +79,22 @@ function animate() {
     lightsMesh.rotation.y += 0.002;
 
     // Rotar la luna alrededor de la Tierra
-    moonMesh.position.x = 1.5 * Math.cos(Date.now() * 0.001); // Movimiento en el eje X
-    moonMesh.position.z = 1.5 * Math.sin(Date.now() * 0.001); // Movimiento en el eje Z
+    moonMesh.position.x = 1.5 * Math.cos(Date.now() * 0.001);
+    moonMesh.position.z = 1.5 * Math.sin(Date.now() * 0.001);
+
+    // Ocultar estrellas si el zoom es demasiado alejado
+    if (camera.position.z > 1000) {
+        stars.visible = false;  // Desaparecen las estrellas
+    } else {
+        stars.visible = true;   // Las estrellas son visibles
+    }
+
+    // Mostrar leyenda si las estrellas ya no son visibles
+    if (camera.position.z > 1010) {
+        warningDiv.style.display = 'block';  // Mostrar el texto
+    } else {
+        warningDiv.style.display = 'none';   // Ocultar el texto
+    }
 
     renderer.render(scene, camera);
 }
