@@ -13,9 +13,7 @@ for(let i=0;i<datetime.length;i++){
     */
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value + " of May"; // Display the default slider value
-
-
+output.innerHTML = "May "+slider.value+"rd"; // Display the default slider value
 var datetime=output.innerHTML;
 datetime = datetime + " Lmao";
 
@@ -25,7 +23,12 @@ console.log(datetime);
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value + " of May";
+  if(slider.value==3){
+    output.innerHTML = "May "+ this.value+"rd";
+  } else {
+    output.innerHTML = "May "+ this.value+"th";
+  } 
+  
 } 
 
 //document.getElementById("datetime").innerHTML = datetime;

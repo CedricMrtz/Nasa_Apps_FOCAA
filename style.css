@@ -66,6 +66,18 @@
      align-items: center;
      justify-content: center;
    }
+   .background{
+    margin:0;
+    overflow: hidden;
+    position: relative;
+    margin-top: -1000px;
+    height: 100vh;
+    z-index: 1;
+   }
+   .frontground{
+    z-index: 2;
+    position: absolute;
+   }
    /* slider */
    .slidecontainer {
      width: 100%; /* Width of the outside container */
@@ -105,12 +117,10 @@
      background: Gray; /* Green background */
      cursor: pointer; /* Cursor on hover */
    }
- 
- 
  /* other stuff */
    .cen {
-     display: flex;
-   justify-content: space-around; /* Distribuye el espacio horizontalmente */
+   display: flex;
+   justify-content: center; /* Distribuye el espacio horizontalmente */
    align-items: center; 
    padding: 15px;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -118,7 +128,7 @@
    margin: 10px;
    flex-direction: row; /* Ya está en fila */
    font-size: 10px;
-   font-family: "Comic Sans MS", cursive, sans-serif;
+   font-family: "Arial", cursive, sans-serif;
    
    }
   
@@ -176,7 +186,8 @@
  
  /* Change the background color of the dropdown button when the dropdown content is shown */
  .dropdown:hover .dropbtn {background-color: BLACK;} 
- 
+
+ /*BOTTOM*/
  
  
  

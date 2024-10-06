@@ -15,6 +15,9 @@ const earthGroup = new THREE.Group();
 earthGroup.rotation.z = -23.4 * Math.PI / 180;
 scene.add(earthGroup);
 new OrbitControls(camera, renderer.domElement);
+//controls.minDistance = 2;  // Establecer el zoom mínimo (distancia mínima)
+//controls.maxDistance = 10; // Establecer el zoom máximo (distancia máxima)
+
 
 // Geometría de la Tierra
 const detail = 12;
