@@ -1,4 +1,3 @@
-
 var now = new Date();
 var datetime = now.toLocaleDateString();
 
@@ -29,4 +28,4 @@ slider.oninput = function() {
   output.innerHTML = this.value + " of May";
 } 
 
-//document.getElementById("datetime").innerHTML = datetime; 
+//document.getElementById("datetime").innerHTML = datetime;
