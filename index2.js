@@ -90,42 +90,42 @@ slider.oninput = function() {
             break;
         case 6:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
-            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            cloudSprite.position.set(1.0, 0.3, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 7:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
-            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            cloudSprite.position.set(.8, 0.1, -0.8);  // Posición fija de la nube en la Tierra
             break;      
         case 8:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
-            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            cloudSprite.position.set(1.1, 0.1, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 9:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
-            cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            cloudSprite.position.set(1.4, 0.4, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 10:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 11:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;      
         case 12:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 13:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(1, 1.5, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 14:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(.8, 1, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;
         case 15:
-            cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
+            cloudSprite.scale.set(3, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
             break;
         default:
