@@ -76,11 +76,11 @@
    }
    .frontground{
     z-index: 2;
-    position: absolute;
+    
    }
    /* slider */
    .slidecontainer {
-     width: 40%; /* Width of the outside container */
+     width: 100%; /* Width of the outside container */
    }
    
    /* The slider itself */
@@ -193,8 +193,10 @@
   display: flex;
   justify-content: center; /* Centrado horizontal */
   align-items: center;     /* Centrado vertical */
-  height: 100vh;           /* Altura completa de la ventana */
-  margin-left:500px;
+  height: 100px;           /* Altura completa de la ventana */
+  margin-left:100px;
+  
+
 }
 
  
