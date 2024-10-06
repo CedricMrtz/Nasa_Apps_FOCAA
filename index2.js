@@ -79,6 +79,7 @@ slider.oninput = function() {
         case 3:
             cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            output.innerHTML = 'hola mundo';
             break;
         case 4:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
@@ -155,6 +156,7 @@ scene.add(stars);
 const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-2, 0.5, 1.5);
 scene.add(sunLight);
+
 
 // Texto de advertencia
 const warningDiv = document.createElement('div');
