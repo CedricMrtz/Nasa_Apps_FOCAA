@@ -1,11 +1,8 @@
 
-//var function
-
-var button=document.getElementById("nombre");
-button.addEventListener("click",myFunction);
-
 var now = new Date();
 var datetime = now.toLocaleDateString();
+
+
 /*
 for(let i=0;i<datetime.length;i++){
     let thing=datetime.charAt(i);
@@ -17,21 +14,19 @@ for(let i=0;i<datetime.length;i++){
     */
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
+output.innerHTML = slider.value + " of May"; // Display the default slider value
+
+
+var datetime=output.innerHTML;
+datetime = datetime + " Lmao";
+
+console.log(typeof(datetime));
+console.log(datetime);
+// var datetime = output.innerHTML;
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value + " of May";
 } 
 
-document.getElementById("datetime").innerHTML = datetime;
-
-function myFunction(){
-    console.log("funciona2");
-let person = prompt("Please enter your name ", "User");
-if(person!= null){
-    document.getElementById("Fernando").innerHTML =
-    "Hello "+person+ "!";
-}
-console.log(person);
-}
+//document.getElementById("datetime").innerHTML = datetime; 
