@@ -71,6 +71,7 @@ const spriteMaterial = new THREE.SpriteMaterial({ map: cloudTexture, transparent
 const cloudSprite = new THREE.Sprite(spriteMaterial);
 cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
 cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+const text = document.querySelector('.Cedric')
 //Switch para definir las propiedades de la aurora
 slider.oninput = function() {
     const sliderValue = parseInt(slider.value);  // Convertir el valor del slider a número
@@ -79,55 +80,68 @@ slider.oninput = function() {
         case 3:
             cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
-            output.innerHTML = 'hola mundo';
+
+            text.innerHTML = 'Notable solar flares were observed coming from 2 regions of the sun called “AR13663” and “AR13664”';
             break;
         case 4:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Notable solar flares were observed coming from 2 regions of the sun called “AR13663” and “AR13664”';
             break;
         case 5:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Notable solar flares were observed coming from 2 regions of the sun called “AR13663” and “AR13664”';
             break;
         case 6:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.0, 0.3, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'The most intense flare occurred, being of a X4.5 intensity. though it would take a few days to show any impact on our planet.';
             break;
         case 7:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(.8, 0.1, -0.8);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'The first signs of the solar storm started late on May 7th with two strong solar flares. followed by more solar flares directed towards the planet earth.';
             break;      
         case 8:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.1, 0.1, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'The CMEs are rapidly approaching the atmosphere of the earth.';
             break;
         case 9:
             cloudSprite.scale.set(2, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.4, 0.4, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'the collision with earth is fast approaching and will occur in a few hours.';
             break;
         case 10:
             cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Aurora borealis became visible on some regions of the planet (some of them including the United States, Mexico, Jamaica, Spain, Algeria, Africa, etc.).'
             break;
         case 11:
             cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Some of the aurorae were still visible in some areas of the world, some without the need of amplification devices such as cameras or telescopes.';
             break;      
         case 12:
             cloudSprite.scale.set(3, 3, 4); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'the aurorae started to dissipate but some issues still persist.';
             break;
         case 13:
             cloudSprite.scale.set(1, 1.5, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'While some residues still cause some issues, they have become weaker overall.';
             break;
         case 14:
             cloudSprite.scale.set(.8, 1, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Its here where most effects surrounding the storm have ceased to affect the earth, though a next solar flare would make an act of present.';
             break;
         case 15:
             cloudSprite.scale.set(3, 2, 3); // Ajustar tamaño de la nube
             cloudSprite.position.set(1.2, 0.2, -0.5);  // Posición fija de la nube en la Tierra
+            text.innerHTML = 'Is on this day when the effects of the CMEs ejected by the sun collide with the planet once again, increasing the chances of aurorae appearing in the sky exponentially.';
             break;
         default:
             cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
