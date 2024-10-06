@@ -155,8 +155,27 @@ scene.add(stars);
 const sunLight = new THREE.DirectionalLight(0xffffff);
 sunLight.position.set(-2, 0.5, 1.5);
 scene.add(sunLight);
+// Crear el botón
+const button = document.createElement('button');
+button.textContent = 'Discover It';
+button.style.marginTop = '10px'; // Espacio entre el texto y el botón
+button.style.padding = '10px 20px'; // Espaciado del botón
+button.style.fontSize = '15px'; // Tamaño de fuente del botón
+button.style.cursor = 'pointer'; // Cambia el cursor al pasar por encima
+button.style.height = '50px'; // Ajusta la altura del botón
+button.style.width = '120px'; // Ajusta el ancho del botón
+button.style.marginLeft='130px';
+
+// Añadir el evento de clic al botón
+button.onclick = function() {
+    window.location.href = 'https://n9.cl/1rmj9'; // Cambia esto por el enlace deseado
+};
+
+// Añadir el botón al div de advertencia
+
 
 // Texto de advertencia
+const lineBreak = document.createElement('br');
 const warningDiv = document.createElement('div');
 warningDiv.style.position = 'absolute';
 warningDiv.style.top = '50%';
@@ -167,6 +186,10 @@ warningDiv.style.fontSize = '2em';
 warningDiv.style.display = 'none'; // Oculto por defecto
 warningDiv.textContent = 'What do you think is out here?';
 document.body.appendChild(warningDiv);
+warningDiv.appendChild(lineBreak);
+warningDiv.appendChild(button);
+
+
 
 // Ajuste de tamaño al redimensionar la ventana
 window.addEventListener('resize', () => {
@@ -201,8 +224,10 @@ function animate() {
     // Mostrar leyenda si las estrellas ya no son visibles
     if (camera.position.z > 1010) {
         warningDiv.style.display = 'block';  // Mostrar el texto
+        
     } else {
         warningDiv.style.display = 'none';   // Ocultar el texto
+
     }
 
     renderer.render(scene, camera);
