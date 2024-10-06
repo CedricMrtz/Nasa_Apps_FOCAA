@@ -45,6 +45,17 @@ earthGroup.add(moonMesh);
 // Posición de la luna
 moonMesh.position.set(1.5, 0, 0);
 
+// Añadir la nube al grupo de la Tierra
+const cloudTexture = loader.load("https://i.ibb.co/C1d1b22/cloud.jpg");  // Carga una textura de nube
+const spriteMaterial = new THREE.SpriteMaterial({ map: cloudTexture, transparent: true });
+const cloudSprite = new THREE.Sprite(spriteMaterial);
+cloudSprite.scale.set(1, 1, 1); // Ajustar tamaño de la nube
+cloudSprite.position.set(2, 0.5, -1);  // Posición fija de la nube en la Tierra
+
+// Añadir la nube al grupo de la Tierra para que gire con ella
+earthGroup.add(cloudSprite);
+
+// Campo de estrellas
 const stars = getStarfield({ numStars: 2000 });
 scene.add(stars);
 
@@ -77,10 +88,15 @@ function animate() {
     requestAnimationFrame(animate);
     earthMesh.rotation.y += 0.002; 
     lightsMesh.rotation.y += 0.002;
+    earthGroup.rotation.y += 0.002;
 
     // Rotar la luna alrededor de la Tierra
     moonMesh.position.x = 1.5 * Math.cos(Date.now() * 0.001);
     moonMesh.position.z = 1.5 * Math.sin(Date.now() * 0.001);
+
+    // Rotar la nube alrededor de la Tierra (si quieres que la nube gire)
+    //cloudSprite.position.x = 2 * Math.cos(Date.now() * 0.001);
+    //cloudSprite.position.z = 2 * Math.sin(Date.now() * 0.001);
 
     // Ocultar estrellas si el zoom es demasiado alejado
     if (camera.position.z > 1000) {
